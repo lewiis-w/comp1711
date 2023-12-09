@@ -11,20 +11,24 @@ int file_counter = 0;
 int counter = 0;
 char filename[60];
 char inputchar;
+// variables for C
 int lowest_steps;
 int lowest_steps_index;
+// variables for D
 int highest_steps;
 int highest_steps_index;
+// variables for E
 int sum;
 float floatsum;
 float floatmean;
 float floatmeanrounded;
 int intmean;
+// variables for F
 int record_counter;
 int record;
 int counter_index;
 int endindexrecord;
-// Global variables for filename and FITNESS_DATA array
+
 
 // This is your helper function. Do not change it in any way.
 // Inputs: character array representing a row; the delimiter character
@@ -54,32 +58,12 @@ void tokeniseRecord(const char *input, const char *delimiter,
 
                     }
 
-
-
-
-// Complete the main function
 int main() {
-    // char filename [] = "FitnessData_2023.csv";
-    // FILE *file = fopen(filename, "r");
 
      int buffer_size = 50;
      char line_buffer[buffer_size];
     
      FITNESS_DATA data1[500];
-
-     //while (fgets(line_buffer, buffer_size, file) != NULL) {
-        //needed for tokenise function to work?
-     //   char date1[11];
-   //     char time1[6];
-    //    char steps1[8];
-
-   //     tokeniseRecord(line_buffer, ",", date1, time1, steps1);
-     //   strcpy(data1[file_counter].date, date1);
-    //    strcpy(data1[file_counter].time, time1);
-    //    data1[file_counter].steps = atoi(steps1);
-   //     file_counter += 1;
-   // }
-  //  fclose(file);
 
    while (1) {
         printf("A: \n");
@@ -100,18 +84,10 @@ int main() {
         case 'A':
         case 'a':
 
-            
-          //  buffer_size = 50;
-         //   line_buffer[buffer_size];
-           // FITNESS_DATA data1[500];
 
             printf("Please enter the name of the data file: ");
             fgets(filename, sizeof(filename), stdin);
             filename[strcspn(filename, "\n")] = '\0';
-            //fgets(line_buffer, buffer_size, stdin);
-            //line_buffer[strcspn(line_buffer, "\n")] = '\0';
-            //scanf(line_bu"%s", filename);
-            //char filename [] = "FitnessData_2023.csv";
 
             FILE *file = fopen(filename, "r");
                 if (!file)
@@ -120,11 +96,6 @@ int main() {
                 return 1;
             }
 
-
-            //int buffer_size = 50;
-            //char line_buffer[buffer_size];
-    
-            //FITNESS_DATA data1[500];
             file_counter = 0;
             while (fgets(line_buffer, buffer_size, file) != NULL) {
             //needed for tokenise function to work?
@@ -141,9 +112,6 @@ int main() {
 
             fclose(file);
             printf("file successfully loaded.\n");
-            //if (filenamecheck == filename) {
-
-        
             break;
 
         case 'B':
